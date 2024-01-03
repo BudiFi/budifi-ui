@@ -6,9 +6,11 @@ import {
     media,
     spacing,
     fontSize,
+    fontWeights,
 } from "./declarations";
+import { CustomTheme } from "./interfaces/styled";
 
-const theme = {
+const theme: CustomTheme = {
     colors,
     media,
     fontFamily,
@@ -16,6 +18,7 @@ const theme = {
     fontSize,
     spacing,
     border,
+    fontWeights,
 };
 
 export default theme;
