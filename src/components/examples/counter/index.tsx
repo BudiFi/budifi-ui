@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
-import { decrease, increase } from "@redux/actions";
-import { RootState } from "@redux/reducers";
-import { useAppDispatch } from "@redux/store";
+import { decrease, increase } from "src/store/actions";
+import { RootState } from "src/store/reducers";
+import { useAppDispatch } from "src/store/store";
 
 export default function Counter() {
     const dispatch = useAppDispatch();

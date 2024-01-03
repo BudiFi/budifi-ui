@@ -5,7 +5,7 @@ import {
 } from "@testing-library/react";
 import { ReactElement } from "react";
 
-import store from "@redux/store";
+import store from "src/store/store";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Provider } from "react-redux";
 
