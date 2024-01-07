@@ -16,6 +16,17 @@ export const FormHeading = styled.div`
         color: ${({ theme }) => theme.colors.darkBrown[300]};
         line-height: ${({ theme }) => theme.fontSize.custom(1.875)};
     }
+    ${({ theme }) => theme.media.mobile} {
+        h2 {
+            font-size: ${({ theme }) => theme.fontSize.custom(1.375)};
+            line-height: ${({ theme }) => theme.fontSize.custom(2)};
+        }
+        p {
+            font-size: ${({ theme }) => theme.fontSize.small};
+            line-height: ${({ theme }) => theme.fontSize.custom(1.125)};
+        }
+        margin-bottom: ${({ theme }) => theme.spacing.custom(2)};
+    }
 `;
 
 export const FormFooterText = styled.div`

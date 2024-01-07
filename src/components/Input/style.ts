@@ -18,6 +18,9 @@ export const StyledInput = styled(Input)`
     &:active {
         border: ${({ theme }) => theme.border.darkBrown};
     }
+    ${({ theme }) => theme.media.mobile} {
+        height: ${({ theme }) => theme.spacing.custom(2.625)};
+    }
 `;
 export const StyledPasswordInput = styled(Input.Password)`
     height: ${({ theme }) => theme.spacing.input};
