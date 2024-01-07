@@ -36,7 +36,7 @@ const NotificationContextProvider: React.FC = ({ children }) => {
     });
 
     const updateNotification = (data: INoticationProps) => {
-        setNotificationData(data);
+        setNotificationData({ ...data });
     };
     const renderIcon = (type: IconTypes) => {
         switch (type) {
@@ -53,8 +53,7 @@ const NotificationContextProvider: React.FC = ({ children }) => {
 
     const openNotification = () => {
         const key = `open${Date.now()}`;
-        api.open({
-            type: notificationData.type,
+        api[notificationData.type]({
             message: (
                 <Text variant="body" weight="bold">
                     {notificationData.title}

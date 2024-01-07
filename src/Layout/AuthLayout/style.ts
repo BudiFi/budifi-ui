@@ -2,15 +2,14 @@ import styled from "styled-components";
 import { Svg } from "@assets/images/svg";
 import { AuthVariant } from "./index";
 
-const { ManReading } = Svg;
+const { ManReading, RidingBicycle } = Svg;
 
 const backdropOptions = {
     login: ManReading,
-    signup: ManReading,
+    signup: RidingBicycle,
     forgot_password: ManReading,
     reset_password: ManReading,
 };
-22;
 
 export const AuthContainer = styled.div`
     background: ${({ theme }) => theme.colors.white[100]};
@@ -57,7 +56,7 @@ export const AuthContentContainer = styled.div`
 `;
 
 export const AuthContent = styled.div`
-    width: 40%;
+    width: 45%;
     height: auto;
 `;
 
@@ -68,4 +67,26 @@ export const Backdrop = styled.div<{ variant: AuthVariant }>`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+`;
+
+export const Footer = styled.footer`
+    display: flex;
+    height: ${({ theme }) => theme.spacing.custom(4.625)};
+    padding: ${({ theme }) => theme.spacing.double(0, 5)};
+    align-items: center;
+    justify-content: space-between;
+    background: ${({ theme }) => theme.colors.lightBrown[50]};
+    border-top: ${({ theme }) => theme.border.darkBrown};
+    border-bottom: ${({ theme }) => theme.border.darkBrown};
+`;
+
+export const FooterText = styled.span`
+    font-size: ${({ theme }) => theme.fontSize.small};
+    line-height: ${({ theme }) => theme.spacing.normal};
+`;
+
+export const FooterRight = styled.div`
+    display: flex;
+    align-items: center;
+    gap: ${({ theme }) => theme.fontSize.custom(2.69)};
 `;

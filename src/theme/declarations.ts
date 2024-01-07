@@ -63,6 +63,7 @@ const colors = {
     },
     lightBrown: {
         50: " #FFFEF6",
+        200: "#F1E9C8",
         400: "#B6AF92",
     },
     red: {
