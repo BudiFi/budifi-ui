@@ -2,15 +2,14 @@ import styled from "styled-components";
 import { Svg } from "@assets/images/svg";
 import { AuthVariant } from "./index";
 
-const { ManReading } = Svg;
+const { ManReading, RidingBicycle } = Svg;
 
 const backdropOptions = {
     login: ManReading,
-    signup: ManReading,
+    signup: RidingBicycle,
     forgot_password: ManReading,
     reset_password: ManReading,
 };
-22;
 
 export const AuthContainer = styled.div`
     background: ${({ theme }) => theme.colors.white[100]};
@@ -25,6 +24,10 @@ export const Navbar = styled.nav`
     background: ${({ theme }) => theme.colors.lightBrown[50]};
     border-bottom: ${({ theme }) => theme.border.lightBrown};
     padding: ${({ theme }) => theme.spacing.double(0, 5)};
+    ${({ theme }) => theme.media.mobile} {
+        padding: ${({ theme }) => theme.spacing.double(0, 1)};
+        height: ${({ theme }) => theme.spacing.custom(3.5)};
+    }
 `;
 
 export const Logo = styled.div`
@@ -35,6 +38,9 @@ export const Logo = styled.div`
     align-items: center;
     font-family: ${({ theme }) => theme.fontFamily.heading};
     font-weight: 800;
+    ${({ theme }) => theme.media.mobile} {
+        padding-right: ${({ theme }) => theme.spacing.custom(1)};
+    }
 `;
 
 export const NavRight = styled.div`
@@ -48,17 +54,27 @@ export const NavRight = styled.div`
     a {
         color: ${({ theme }) => theme.colors.green[800]};
     }
+    ${({ theme }) => theme.media.mobile} {
+        padding-left: ${({ theme }) => theme.spacing.custom(1)};
+        font-size: ${({ theme }) => theme.fontSize.small};
+    }
 `;
 
 export const AuthContentContainer = styled.div`
     display: flex;
     padding: ${({ theme }) => theme.spacing.double(5, 12)};
     justify-content: space-between;
+    ${({ theme }) => theme.media.mobile} {
+        padding: ${({ theme }) => theme.spacing.double(2, 1.5)};
+    }
 `;
 
 export const AuthContent = styled.div`
-    width: 40%;
+    width: 45%;
     height: auto;
+    ${({ theme }) => theme.media.mobile} {
+        width: 100%;
+    }
 `;
 
 export const Backdrop = styled.div<{ variant: AuthVariant }>`
@@ -68,4 +84,33 @@ export const Backdrop = styled.div<{ variant: AuthVariant }>`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    ${({ theme }) => theme.media.mobile} {
+        display: none;
+    }
+`;
+
+export const Footer = styled.footer`
+    display: flex;
+    height: ${({ theme }) => theme.spacing.custom(4.625)};
+    padding: ${({ theme }) => theme.spacing.double(0, 5)};
+    align-items: center;
+    justify-content: space-between;
+    background: ${({ theme }) => theme.colors.lightBrown[50]};
+    border-top: ${({ theme }) => theme.border.darkBrown};
+    border-bottom: ${({ theme }) => theme.border.darkBrown};
+    ${({ theme }) => theme.media.mobile} {
+        padding: ${({ theme }) => theme.spacing.double(1, 1)};
+        flex-direction: column;
+    }
+`;
+
+export const FooterText = styled.span`
+    font-size: ${({ theme }) => theme.fontSize.small};
+    line-height: ${({ theme }) => theme.spacing.normal};
+`;
+
+export const FooterRight = styled.div`
+    display: flex;
+    align-items: center;
+    gap: ${({ theme }) => theme.fontSize.custom(2.69)};
 `;

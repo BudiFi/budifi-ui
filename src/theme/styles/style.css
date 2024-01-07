@@ -10,3 +10,17 @@
     font-family: "Belonid";
     src: url("../../assets/fonts/Belonid/TheBelonid-Regular.ttf");
 }
+
+html,
+body {
+    font-family: "Zodiak", sans-serif;
+}
+
+.signup_validation_container .ant-popover-content {
+    width: 16.2rem;
+}
+.signup_validation_container .ant-popover-inner {
+    border-radius: 0.25rem;
+    padding: 0.8rem;
+    border: 1px solid #406829;
+}

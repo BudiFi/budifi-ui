@@ -1,6 +1,10 @@
 import BaseRequest from ".";
 import { AUTH_ROUTES } from "./routes";
-import { ILoginPayload, IResendVerificationPayload } from "./interfaces";
+import {
+    ICreateUserPayload,
+    ILoginPayload,
+    IResendVerificationPayload,
+} from "./interfaces";
 
 class AuthService extends BaseRequest {
     forgotPassword = async (payload: IResendVerificationPayload) => {
@@ -10,6 +14,9 @@ class AuthService extends BaseRequest {
     };
     login = async (payload: ILoginPayload) => {
         return await this.api.post(AUTH_ROUTES.LOGIN, payload);
+    };
+    signup = async (payload: ICreateUserPayload) => {
+        return await this.api.post(AUTH_ROUTES.SIGNUP, payload);
     };
 }
 

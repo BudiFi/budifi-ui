@@ -1,6 +1,6 @@
 export enum AUTH_ROUTES {
     LOGIN = "/auth/login",
-    SIGNUP = "/shipmonk/users/create",
+    SIGNUP = "/auth/signup",
     RESEND_VERIFICATION = "/shipmonk/users/resend-verification",
     VERIFY_EMAIL = "/shipmonk/users/verify",
     USER_PROFILE = "/shipmonk/users",

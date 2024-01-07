@@ -81,33 +81,25 @@ const variantOptions = (variant: TypographyVariant, theme: CustomTheme) =>
         `,
         subtitle1: `
             font-size: 2rem;
-            line-height:  ${theme.spacing.normal};
-            margin-bottom: 0.75rem;
         `,
         headline: `
             font-size: 1.25rem;
-            line-height: ${theme.spacing.normal};
-            margin-bottom: 0.625rem;
+           
         `,
         body: `
             font-size: 1rem;
             line-height:  ${theme.spacing.normal};
-            margin-bottom: 0.5rem;
         `,
         body2: `
             font-size: 0.875rem;
-            line-height: ${theme.spacing.normal};
-            margin-bottom: 0.4375rem;
         `,
         caption: `
             font-size: ${theme.fontSize.normal};
             line-height:  ${theme.spacing.small};
-            margin-bottom: 0.375rem;
         `,
         micro: `
             font-size: ${theme.fontSize.normal};
-            line-height: 110%;
-            margin-bottom: 0.3rem;
+          
         `,
     }[variant]);
 
@@ -118,7 +110,11 @@ export const StyledText = styled.span<{
     font?: "zodiak" | "belonid" | "heading";
 }>`
     font-family: ${({ theme, font }) =>
-        font === "zodiak" ? theme.fontFamily.zodiak : theme.fontFamily.belonid};
+        font === "zodiak"
+            ? theme.fontFamily.zodiak
+            : font === "heading"
+            ? theme.fontFamily.heading
+            : theme.fontFamily.belonid};
     font-weight: ${({ theme, weight }) => theme.fontWeights[weight] as any};
     ${({ variant, theme }) => variantOptions(variant, theme)}
 `;
